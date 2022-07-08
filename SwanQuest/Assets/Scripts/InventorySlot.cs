@@ -6,12 +6,12 @@ using UnityEngine;
 public class InventorySlot : IInventorySlot
 {
 
-    public bool isFull => amount == capacity;
+    public bool isFull => !isEmpty && amount == capacity;
     public bool isEmpty => item == null;
 
     public IInventoryItem item { get; private set; }
     public Type type => item.type;
-    public int amount => isEmpty ? 0 : item.amount;
+    public int amount => isEmpty ? 0 : item.state.amount;
     public int capacity { get; private set; }
 
     public void setItem(IInventoryItem item)
@@ -20,14 +20,14 @@ public class InventorySlot : IInventorySlot
             return;
         
         this.item = item;
-        this.capacity = item.maxItemInInvetorySlot;
+        this.capacity = item.info.maxItemInInvetorySlot;
     }
     public void clear()
     {
         if(isEmpty)
             return;
         
-        item.amount = 0;
+        item.state.amount = 0;
         item = null;
     }
 

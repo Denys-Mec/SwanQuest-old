@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+
 
 public interface IInventoryItem 
 {
-   bool isEquipped { get; set; }
+   IInventoryItemInfo info { get; }
+   IInventoryItemState state { get; }
+
+   
    Type type { get; }
-   int maxItemInInvetorySlot { get; }
-   int amount { get; set; }
+
 
    IInventoryItem clone();
 }
