@@ -5,21 +5,20 @@ using Random = UnityEngine.Random;
 
 public class UIInventoryTester : MonoBehaviour
 {
-    private IInventoryItemInfo _appleInfo;
+ //   private IInventoryItemInfo _appleInfo;
     private IInventoryItemInfo _pepperInfo;
     private UIInventorySlot[] _uiSlots;
 
     public InventoryWithSlots inventory { get; }
 
-    public UIInventoryTester(IInventoryItemInfo appleInfo, 
-                            IInventoryItemInfo pepperInfo, 
+    public UIInventoryTester(IInventoryItemInfo pepperInfo, 
                             UIInventorySlot[] slots)
     {
-        _appleInfo = appleInfo;
+       // _appleInfo = appleInfo;
         _pepperInfo = pepperInfo;
         _uiSlots = slots;
 
-        inventory = new InventoryWithSlots(15);
+        inventory = new InventoryWithSlots(8);
         inventory.OnInventoryStateChangedEvent += OnInventoryStateChanged;
     }
 
@@ -28,7 +27,7 @@ public class UIInventoryTester : MonoBehaviour
         var allSlots = inventory.GetAllSlots();
         var avaibleSlots = new List<IInventorySlot>(allSlots);
 
-        var filledSlots = 5;
+        var filledSlots = 0;
         for(int i=0; i<filledSlots; i++)
         {
             var filledSlot = AddRandomApplesIntoRandomSlot(avaibleSlots);
@@ -45,15 +44,15 @@ public class UIInventoryTester : MonoBehaviour
         var rSlotIndex = Random.Range(1, slots.Count);
         var rSlot = slots[rSlotIndex];
         var rCount = Random.Range(1, 4);
-        var apple = new Apple(_appleInfo);
-        apple.state.amount = rCount;
-        inventory.TryToAddToSlot(this, rSlot, apple);
+   //     var apple = new Apple(_appleInfo);
+     //   apple.state.amount = rCount;
+       // inventory.TryToAddToSlot(this, rSlot, apple);
         return rSlot;
     }
 
     private IInventorySlot AddRandomPeppersIntoRandomSlot(List<IInventorySlot> slots)
     {
-        var rSlotIndex = Random.Range(0, slots.Count);
+        var rSlotIndex = Random.Range(1, slots.Count);
         var rSlot = slots[rSlotIndex];
         var rCount = Random.Range(1, 4);
         var pepper = new Pepper(_pepperInfo);

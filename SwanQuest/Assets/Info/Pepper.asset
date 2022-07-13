@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee296cdd66ccfe3cc86a1ccbb9976fed, type: 3}
   m_Name: Pepper
   m_EditorClassIdentifier: 
-  _id: 
-  _title: 
-  _descriprion: 
-  _maxItemInInvetorySlot: 0
-  _spriteIcon: {fileID: 0}
+  _id: pepper
+  _title: Pepper
+  _descriprion: Red Pepper
+  _maxItemInInvetorySlot: 7
+  _spriteIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
