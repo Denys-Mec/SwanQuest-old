@@ -49,7 +49,9 @@
      <Compile Include="Assets/Scripts/Pepper.cs" />
      <Compile Include="Assets/Scripts/UIItem.cs" />
      <Compile Include="Assets/Scripts/UISlot.cs" />
+     <Compile Include="Assets/UI/Scripts/ArrowHoldEffect.cs" />
      <Compile Include="Assets/UI/Scripts/CameraController.cs" />
+     <Compile Include="Assets/UI/Scripts/CameraController1.cs" />
      <Compile Include="Assets/UI/Scripts/GameFieldItem.cs" />
      <Compile Include="Assets/UI/Scripts/UIInventory.cs" />
      <Compile Include="Assets/UI/Scripts/UIInventoryItem.cs" />
